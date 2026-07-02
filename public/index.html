@@ -39,7 +39,10 @@
             });
             document.getElementById("information").innerHTML="username: "+response.data.username + " password: "+response.data.password
         }
-        userInformation();
+        if(localStorage.getItem("token")){
+            userInformation();
+        }
+        
 
         function logout(){
             localStorage.removeItem("token");
